@@ -36,7 +36,7 @@ std::string perform_linearization(std::string exepath,
 
         for (unsigned int i = start; i <= end; i++) {
             std::string num = correct_serial + std::to_string(i);
-            if (num.length() < digits_count) num += "0";
+            for (unsigned short j = num.length(); j < digits_count; j++) num += "0";
 
             const char *cmd = std::string("./" + exepath + " " + num).c_str();
 
